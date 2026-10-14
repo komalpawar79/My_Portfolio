@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#171717"/>
+  <!-- Grid overlay -->
+  <g opacity="0.06" stroke="#F5F2EA" stroke-width="1">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="472" x2="1200" y2="472"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+  <!-- Accent shape -->
+  <circle cx="980" cy="315" r="180" stroke="#C7FF4A" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="980" cy="315" r="120" stroke="#F5F2EA" stroke-width="1" stroke-opacity="0.1" stroke-dasharray="6 12"/>
+  <circle cx="980" cy="315" r="28" fill="#C7FF4A"/>
+
+  <!-- Brand / Tagline -->
+  <text x="100" y="140" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="600" fill="#858585" letter-spacing="3">PORTFOLIO / 2026</text>
+  <text x="100" y="240" font-family="'Space Grotesk', sans-serif" font-size="72" font-weight="700" fill="#F5F2EA" letter-spacing="-2">KOMAL PAWAR</text>
+  <text x="100" y="320" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="600" fill="#C7FF4A">Frontend &amp; MERN Stack Developer</text>
+  <text x="100" y="400" font-family="'Inter', sans-serif" font-size="20" fill="#858585">Building responsive interfaces, practical applications, and digital experiences.</text>
+
+  <!-- Tags -->
+  <rect x="100" y="470" width="120" height="36" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="122" y="493" font-family="'Inter', sans-serif" font-size="12" fill="#F5F2EA" letter-spacing="1">REACT</text>
+  <rect x="236" y="470" width="160" height="36" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="256" y="493" font-family="'Inter', sans-serif" font-size="12" fill="#F5F2EA" letter-spacing="1">MERN STACK</text>
+  <rect x="412" y="470" width="180" height="36" fill="none" stroke="#333" stroke-width="1"/>
+  <text x="432" y="493" font-family="'Inter', sans-serif" font-size="12" fill="#F5F2EA" letter-spacing="1">TAILWIND CSS</text>
+</svg>
+

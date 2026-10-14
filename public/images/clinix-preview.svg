@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#111827"/>
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="160" height="500" fill="#0d1421"/>
+  <rect x="16" y="16" width="28" height="28" rx="6" fill="#C7FF4A"/>
+  <text x="23" y="36" font-family="monospace" font-size="14" font-weight="bold" fill="#171717">C</text>
+  <text x="52" y="28" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Clinix</text>
+  <text x="52" y="40" font-family="sans-serif" font-size="8" fill="#858585">Healthcare</text>
+  <rect x="8" y="64" width="144" height="28" rx="5" fill="#C7FF4A" opacity="0.12"/>
+  <circle cx="24" cy="78" r="6" fill="#C7FF4A" opacity="0.7"/>
+  <text x="36" y="82" font-family="sans-serif" font-size="10" fill="#C7FF4A">Dashboard</text>
+  <circle cx="24" cy="108" r="4" fill="#858585" opacity="0.3"/>
+  <text x="36" y="112" font-family="sans-serif" font-size="10" fill="#858585">Patients</text>
+  <circle cx="24" cy="132" r="4" fill="#858585" opacity="0.3"/>
+  <text x="36" y="136" font-family="sans-serif" font-size="10" fill="#858585">Doctors</text>
+  <circle cx="24" cy="156" r="4" fill="#858585" opacity="0.3"/>
+  <text x="36" y="160" font-family="sans-serif" font-size="10" fill="#858585">Appointments</text>
+  <rect x="8" y="455" width="144" height="28" rx="5" fill="#1e3a2e" opacity="0.7"/>
+  <circle cx="24" cy="469" r="7" fill="#C7FF4A" opacity="0.6"/>
+  <text x="38" y="473" font-family="sans-serif" font-size="9" fill="#F5F2EA">Dr. Priya Sharma</text>
+  <!-- Main area -->
+  <rect x="160" y="0" width="640" height="44" fill="#0f1a2d" opacity="0.6"/>
+  <text x="176" y="28" font-family="sans-serif" font-size="13" font-weight="600" fill="#F5F2EA">Dashboard</text>
+  <!-- Stat cards -->
+  <rect x="176" y="60" width="148" height="72" rx="6" fill="#1a2d1a" opacity="0.8"/>
+  <text x="192" y="80" font-family="sans-serif" font-size="8" fill="#858585">TODAY'S PATIENTS</text>
+  <text x="192" y="108" font-family="sans-serif" font-size="26" font-weight="700" fill="#C7FF4A">12</text>
+  <rect x="338" y="60" width="148" height="72" rx="6" fill="#1a2235" opacity="0.8"/>
+  <text x="354" y="80" font-family="sans-serif" font-size="8" fill="#858585">APPOINTMENTS</text>
+  <text x="354" y="108" font-family="sans-serif" font-size="26" font-weight="700" fill="#5b9de8">8</text>
+  <rect x="500" y="60" width="148" height="72" rx="6" fill="#2a1a1a" opacity="0.8"/>
+  <text x="516" y="80" font-family="sans-serif" font-size="8" fill="#858585">PENDING</text>
+  <text x="516" y="108" font-family="sans-serif" font-size="26" font-weight="700" fill="#e8855b">5</text>
+  <!-- Appointment rows -->
+  <text x="176" y="156" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Today's Appointments</text>
+  <rect x="176" y="166" width="460" height="36" rx="5" fill="#ffffff" opacity="0.04"/>
+  <circle cx="198" cy="184" r="11" fill="#1e3a4a"/>
+  <text x="192" y="188" font-family="sans-serif" font-size="8" fill="#5b9de8">RD</text>
+  <text x="218" y="179" font-family="sans-serif" font-size="10" font-weight="600" fill="#F5F2EA">Rahul Desai</text>
+  <text x="218" y="194" font-family="sans-serif" font-size="8" fill="#858585">Follow-up · Cardiology</text>
+  <text x="460" y="186" font-family="sans-serif" font-size="9" fill="#858585">10:30 AM</text>
+  <rect x="520" y="176" width="56" height="16" rx="8" fill="#1e3a2e"/>
+  <text x="530" y="188" font-family="sans-serif" font-size="8" fill="#C7FF4A">Confirmed</text>
+  <rect x="176" y="208" width="460" height="36" rx="5" fill="#ffffff" opacity="0.03"/>
+  <circle cx="198" cy="226" r="11" fill="#3a2e1e"/>
+  <text x="192" y="230" font-family="sans-serif" font-size="8" fill="#e8c55b">PS</text>
+  <text x="218" y="221" font-family="sans-serif" font-size="10" font-weight="600" fill="#F5F2EA">Priya Singh</text>
+  <text x="218" y="236" font-family="sans-serif" font-size="8" fill="#858585">New Patient · General</text>
+  <text x="460" y="228" font-family="sans-serif" font-size="9" fill="#858585">11:00 AM</text>
+  <rect x="520" y="218" width="56" height="16" rx="8" fill="#2a1e1e"/>
+  <text x="530" y="230" font-family="sans-serif" font-size="8" fill="#e8855b">Pending</text>
+  <rect x="176" y="250" width="460" height="36" rx="5" fill="#ffffff" opacity="0.03"/>
+  <circle cx="198" cy="268" r="11" fill="#1e2a3a"/>
+  <text x="192" y="272" font-family="sans-serif" font-size="8" fill="#5b9de8">AK</text>
+  <text x="218" y="263" font-family="sans-serif" font-size="10" font-weight="600" fill="#F5F2EA">Anjali Kumar</text>
+  <text x="218" y="278" font-family="sans-serif" font-size="8" fill="#858585">Check-up · Cardiology</text>
+  <text x="460" y="270" font-family="sans-serif" font-size="9" fill="#858585">2:15 PM</text>
+  <rect x="520" y="260" width="56" height="16" rx="8" fill="#1e3a2e"/>
+  <text x="530" y="272" font-family="sans-serif" font-size="8" fill="#C7FF4A">Confirmed</text>
+  <!-- Right panel notifications -->
+  <rect x="650" y="60" width="142" height="226" rx="6" fill="#0d1421" opacity="0.8"/>
+  <text x="666" y="82" font-family="sans-serif" font-size="10" font-weight="600" fill="#F5F2EA">Notifications</text>
+  <rect x="666" y="92" width="110" height="44" rx="5" fill="#ffffff" opacity="0.04"/>
+  <circle cx="677" cy="114" r="3" fill="#C7FF4A"/>
+  <text x="686" y="108" font-family="sans-serif" font-size="9" fill="#F5F2EA">Lab results ready</text>
+  <text x="686" y="122" font-family="sans-serif" font-size="7" fill="#858585">Rahul Desai · 5min</text>
+  <rect x="666" y="142" width="110" height="44" rx="5" fill="#ffffff" opacity="0.03"/>
+  <circle cx="677" cy="164" r="3" fill="#5b9de8"/>
+  <text x="686" y="158" font-family="sans-serif" font-size="9" fill="#F5F2EA">Appt rescheduled</text>
+  <text x="686" y="172" font-family="sans-serif" font-size="7" fill="#858585">Priya Singh · 1hr</text>
+  <rect x="666" y="192" width="110" height="44" rx="5" fill="#ffffff" opacity="0.03"/>
+  <circle cx="677" cy="214" r="3" fill="#e8c55b"/>
+  <text x="686" y="208" font-family="sans-serif" font-size="9" fill="#F5F2EA">New patient added</text>
+  <text x="686" y="222" font-family="sans-serif" font-size="7" fill="#858585">Reception · 2hr</text>
+  <!-- Demo label -->
+  <text x="176" y="492" font-family="monospace" font-size="8" fill="#858585" opacity="0.4">DEMO INTERFACE — clinix / illustrative content</text>
+</svg>
+

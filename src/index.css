@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-charcoal: #171717;
+  --color-offwhite: #F5F2EA;
+  --color-lime: #C7FF4A;
+  --color-muted: #858585;
+  --color-divider: #D9D5CC;
+  --color-surface: #EAE6DC;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --color-charcoal: #171717;
+  --color-offwhite: #F5F2EA;
+  --color-lime: #C7FF4A;
+  --color-muted: #858585;
+  --color-divider: #D9D5CC;
+  --color-surface: #EAE6DC;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ─── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-offwhite);
+  color: var(--color-charcoal);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Fluid display headline */
+.text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.text-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.6vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+}
+
+.text-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* ─── Layout Containers ──────────────────────────────────────── */
+.container-xl {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 6rem);
+}
+
+.container-lg {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 5rem);
+}
+
+/* ─── Focus styles ──────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-charcoal); }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 3px; }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: var(--color-lime);
+  color: var(--color-charcoal);
+}
+
+/* ─── Divider ───────────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+.divider-dark {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.85rem 1.85rem;
+  background: var(--color-lime);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  background: #d4ff5a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(199, 255, 74, 0.25);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.85rem 1.85rem;
+  background: transparent;
+  color: var(--color-offwhite);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.85rem 1.85rem;
+  background: transparent;
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(23, 23, 23, 0.35);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.btn-outline-dark:hover {
+  border-color: var(--color-charcoal);
+  background: var(--color-charcoal);
+  color: var(--color-offwhite);
+  transform: translateY(-1px);
+}
+
+/* ─── Marquee & Kinetic Typography ───────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-track-left {
+  animation: marquee-left 34s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track-right {
+  animation: marquee-right 38s linear infinite;
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-container:hover .marquee-track-left,
+.marquee-container:hover .marquee-track-right {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track-left,
+  .marquee-track-right {
+    animation-play-state: paused;
+  }
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(245, 242, 234, 0.35);
+  color: transparent;
+  transition: all 0.25s ease;
+}
+.text-stroke-white:hover {
+  -webkit-text-stroke: 1.5px #C7FF4A;
+  color: #C7FF4A;
+  text-shadow: 0 0 24px rgba(199, 255, 74, 0.35);
+}
+
+.text-stroke-lime {
+  -webkit-text-stroke: 1.5px #C7FF4A;
+  color: transparent;
+  transition: all 0.25s ease;
+}
+.text-stroke-lime:hover {
+  color: #C7FF4A;
+  text-shadow: 0 0 24px rgba(199, 255, 74, 0.4);
+}
+
+/* ─── Orbit Visual ──────────────────────────────────────────── */
+@keyframes orbit-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+.orbit-ring-1 { animation: orbit-slow 22s linear infinite; }
+.orbit-ring-2 { animation: orbit-slow 32s linear infinite reverse; }
+.orbit-ring-3 { animation: orbit-slow 48s linear infinite; }
+.orbit-dot    { animation: pulse-glow 3s ease-in-out infinite; }
+.orbit-core   { animation: float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring-1, .orbit-ring-2, .orbit-ring-3,
+  .orbit-dot, .orbit-core {
+    animation: none;
+  }
+}
+
+/* ─── Project Card Image Hover ──────────────────────────────── */
+.project-card-image {
+  overflow: hidden;
+}
+.project-card-image img {
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
+}
+.project-card-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ─── UI Screenshot Sharpness ───────────────────────────────── */
+.ui-screenshot {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
+/* ─── Arrow animation ───────────────────────────────────────── */
+.arrow-link:hover .arrow-icon {
+  transform: translate(3px, -3px);
+}
+.arrow-icon {
+  transition: transform 0.25s var(--ease-out);
+}
+
+/* ─── Section spacing ───────────────────────────────────────── */
+.section-padding {
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+/* ─── Image fallback ────────────────────────────────────────── */
+.img-fallback {
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Process timeline connector ────────────────────────────── */
+@media (min-width: 768px) {
+  .process-connector {
+    flex: 1;
+    height: 1px;
+    background: var(--color-divider);
+    margin-top: 1.5rem;
+  }
+}

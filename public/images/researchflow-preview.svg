@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#0d1117"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="800" height="52" fill="#161b22"/>
+  <text x="24" y="30" font-family="sans-serif" font-size="15" font-weight="700" fill="#F5F2EA">ResearchFlow</text>
+  <circle cx="740" cy="26" r="12" fill="#1e3a2e"/>
+  <text x="734" y="30" font-family="sans-serif" font-size="9" fill="#C7FF4A">KP</text>
+  <!-- Left panel: Project info -->
+  <rect x="24" y="72" width="280" height="180" rx="8" fill="#161b22"/>
+  <text x="44" y="100" font-family="sans-serif" font-size="12" font-weight="700" fill="#F5F2EA">AI Research Platform</text>
+  <text x="44" y="118" font-family="sans-serif" font-size="9" fill="#858585">Project ID: RF-2024-001 · Active</text>
+  <text x="44" y="145" font-family="sans-serif" font-size="9" fill="#858585">OVERALL PROGRESS</text>
+  <rect x="44" y="152" width="240" height="10" rx="5" fill="#21262d"/>
+  <rect x="44" y="152" width="150" height="10" rx="5" fill="#C7FF4A" opacity="0.7"/>
+  <text x="44" y="178" font-family="sans-serif" font-size="20" font-weight="700" fill="#C7FF4A">62%</text>
+  <text x="90" y="178" font-family="sans-serif" font-size="9" fill="#858585">Complete</text>
+  <text x="44" y="200" font-family="sans-serif" font-size="9" fill="#858585">Started: Jan 2024 · Target: Dec 2024</text>
+  <text x="44" y="222" font-family="sans-serif" font-size="9" fill="#858585">Lead: Dr. Sharma · Field: AI/ML</text>
+  <!-- Chapter list -->
+  <rect x="24" y="268" width="280" height="200" rx="8" fill="#161b22"/>
+  <text x="44" y="292" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Research Chapters</text>
+  <g>
+    <circle cx="52" cy="316" r="7" fill="#C7FF4A"/>
+    <text x="46" y="320" font-family="sans-serif" font-size="8" font-weight="700" fill="#171717">✓</text>
+    <text x="68" y="316" font-family="sans-serif" font-size="10" fill="#F5F2EA">Ch. 1 — Literature Review</text>
+    <text x="68" y="328" font-family="sans-serif" font-size="8" fill="#858585">Completed 14 Mar</text>
+    <circle cx="52" cy="354" r="7" fill="#C7FF4A"/>
+    <text x="46" y="358" font-family="sans-serif" font-size="8" font-weight="700" fill="#171717">✓</text>
+    <text x="68" y="354" font-family="sans-serif" font-size="10" fill="#F5F2EA">Ch. 2 — Methodology</text>
+    <text x="68" y="366" font-family="sans-serif" font-size="8" fill="#858585">Completed 2 Jun</text>
+    <circle cx="52" cy="392" r="7" fill="#C7FF4A" opacity="0.4"/>
+    <text x="46" y="396" font-family="sans-serif" font-size="8" fill="#C7FF4A">3</text>
+    <text x="68" y="392" font-family="sans-serif" font-size="10" fill="#F5F2EA">Ch. 3 — Data Collection</text>
+    <text x="68" y="404" font-family="sans-serif" font-size="8" fill="#858585">In progress — 70%</text>
+    <circle cx="52" cy="430" r="7" fill="#21262d"/>
+    <text x="46" y="434" font-family="sans-serif" font-size="8" fill="#858585">4</text>
+    <text x="68" y="430" font-family="sans-serif" font-size="10" fill="#858585">Ch. 4 — Analysis</text>
+    <text x="68" y="442" font-family="sans-serif" font-size="8" fill="#858585">Not started</text>
+  </g>
+  <!-- Timeline connector -->
+  <line x1="52" y1="323" x2="52" y2="347" stroke="#21262d" stroke-width="2"/>
+  <line x1="52" y1="361" x2="52" y2="385" stroke="#21262d" stroke-width="2"/>
+  <line x1="52" y1="399" x2="52" y2="423" stroke="#21262d" stroke-width="2" stroke-dasharray="3 3"/>
+  <!-- Right panel: Progress detail -->
+  <rect x="324" y="72" width="452" height="180" rx="8" fill="#161b22"/>
+  <text x="344" y="100" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Milestone Timeline</text>
+  <g>
+    <rect x="344" y="114" width="412" height="40" rx="5" fill="#21262d" opacity="0.5"/>
+    <circle cx="360" cy="134" r="6" fill="#C7FF4A"/>
+    <text x="374" y="130" font-family="sans-serif" font-size="10" fill="#F5F2EA">Proposal Approved</text>
+    <text x="374" y="144" font-family="sans-serif" font-size="8" fill="#858585">Jan 15, 2024 — Milestone 1</text>
+    <rect x="344" y="160" width="412" height="40" rx="5" fill="#21262d" opacity="0.5"/>
+    <circle cx="360" cy="180" r="6" fill="#C7FF4A"/>
+    <text x="374" y="176" font-family="sans-serif" font-size="10" fill="#F5F2EA">Literature Review Complete</text>
+    <text x="374" y="190" font-family="sans-serif" font-size="8" fill="#858585">Mar 14, 2024 — Milestone 2</text>
+    <rect x="344" y="206" width="412" height="40" rx="5" fill="#21262d" opacity="0.3"/>
+    <circle cx="360" cy="226" r="6" fill="#21262d" stroke="#C7FF4A" stroke-width="1.5"/>
+    <text x="374" y="222" font-family="sans-serif" font-size="10" fill="#858585">Data Collection</text>
+    <text x="374" y="236" font-family="sans-serif" font-size="8" fill="#858585">Target: Sep 2024 — Milestone 3</text>
+  </g>
+  <!-- Payment panel -->
+  <rect x="324" y="268" width="220" height="200" rx="8" fill="#161b22"/>
+  <text x="344" y="292" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Payment Status</text>
+  <rect x="344" y="304" width="180" height="32" rx="5" fill="#1e3a2e" opacity="0.8"/>
+  <text x="360" y="324" font-family="sans-serif" font-size="10" fill="#C7FF4A">Instalment 1 — PAID</text>
+  <rect x="344" y="342" width="180" height="32" rx="5" fill="#1e3a2e" opacity="0.8"/>
+  <text x="360" y="362" font-family="sans-serif" font-size="10" fill="#C7FF4A">Instalment 2 — PAID</text>
+  <rect x="344" y="380" width="180" height="32" rx="5" fill="#21262d" opacity="0.8"/>
+  <text x="360" y="400" font-family="sans-serif" font-size="10" fill="#858585">Instalment 3 — PENDING</text>
+  <rect x="344" y="418" width="180" height="32" rx="5" fill="#21262d" opacity="0.5"/>
+  <text x="360" y="438" font-family="sans-serif" font-size="10" fill="#858585">Instalment 4 — DUE DEC</text>
+  <!-- Documents panel -->
+  <rect x="556" y="268" width="220" height="200" rx="8" fill="#161b22"/>
+  <text x="576" y="292" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Documents</text>
+  <rect x="576" y="304" width="180" height="32" rx="5" fill="#21262d" opacity="0.6"/>
+  <text x="596" y="320" font-family="sans-serif" font-size="9" fill="#F5F2EA">Ch1_Literature_Review.pdf</text>
+  <text x="596" y="332" font-family="sans-serif" font-size="7" fill="#C7FF4A">↓ Available</text>
+  <rect x="576" y="342" width="180" height="32" rx="5" fill="#21262d" opacity="0.6"/>
+  <text x="596" y="358" font-family="sans-serif" font-size="9" fill="#F5F2EA">Ch2_Methodology.pdf</text>
+  <text x="596" y="370" font-family="sans-serif" font-size="7" fill="#C7FF4A">↓ Available</text>
+  <rect x="576" y="380" width="180" height="32" rx="5" fill="#21262d" opacity="0.3"/>
+  <text x="596" y="396" font-family="sans-serif" font-size="9" fill="#858585">Ch3_Data_Collection.pdf</text>
+  <text x="596" y="408" font-family="sans-serif" font-size="7" fill="#858585">In progress</text>
+  <text x="24" y="492" font-family="monospace" font-size="8" fill="#858585" opacity="0.4">DEMO INTERFACE — researchflow / illustrative content</text>
+</svg>
+

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#0a0f18"/>
+  <!-- Top nav -->
+  <rect x="0" y="0" width="800" height="52" fill="#0d1421"/>
+  <text x="24" y="32" font-family="sans-serif" font-size="15" font-weight="700" fill="#F5F2EA">CampusConnect</text>
+  <rect x="490" y="14" width="80" height="24" rx="12" fill="#1e3a2e"/>
+  <text x="508" y="30" font-family="sans-serif" font-size="9" fill="#C7FF4A">Placement 2024</text>
+  <circle cx="754" cy="26" r="12" fill="#1a2235"/>
+  <text x="748" y="30" font-family="sans-serif" font-size="9" fill="#5b9de8">AP</text>
+  <!-- Stats row -->
+  <rect x="24" y="68" width="168" height="70" rx="6" fill="#0d1421" opacity="0.9"/>
+  <text x="40" y="88" font-family="sans-serif" font-size="8" fill="#858585">COMPANIES ACTIVE</text>
+  <text x="40" y="118" font-family="sans-serif" font-size="28" font-weight="700" fill="#C7FF4A">24</text>
+  <rect x="204" y="68" width="168" height="70" rx="6" fill="#0d1421" opacity="0.9"/>
+  <text x="220" y="88" font-family="sans-serif" font-size="8" fill="#858585">APPLICATIONS</text>
+  <text x="220" y="118" font-family="sans-serif" font-size="28" font-weight="700" fill="#5b9de8">312</text>
+  <rect x="384" y="68" width="168" height="70" rx="6" fill="#0d1421" opacity="0.9"/>
+  <text x="400" y="88" font-family="sans-serif" font-size="8" fill="#858585">SHORTLISTED</text>
+  <text x="400" y="118" font-family="sans-serif" font-size="28" font-weight="700" fill="#e8c55b">87</text>
+  <rect x="564" y="68" width="212" height="70" rx="6" fill="#0d1421" opacity="0.9"/>
+  <text x="580" y="88" font-family="sans-serif" font-size="8" fill="#858585">OFFERS EXTENDED</text>
+  <text x="580" y="118" font-family="sans-serif" font-size="28" font-weight="700" fill="#5be87a">41</text>
+  <!-- Company listings -->
+  <text x="24" y="162" font-family="sans-serif" font-size="12" font-weight="600" fill="#F5F2EA">Active Company Drives</text>
+  <g>
+    <rect x="24" y="172" width="370" height="52" rx="6" fill="#0d1421" opacity="0.9"/>
+    <rect x="40" y="186" width="36" height="24" rx="4" fill="#1e3a4a"/>
+    <text x="46" y="202" font-family="sans-serif" font-size="9" font-weight="700" fill="#5b9de8">G</text>
+    <text x="84" y="192" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Google</text>
+    <text x="84" y="206" font-family="sans-serif" font-size="9" fill="#858585">Software Engineer · ₹18 LPA</text>
+    <rect x="310" y="184" width="68" height="20" rx="10" fill="#1e3a2e"/>
+    <text x="322" y="198" font-family="sans-serif" font-size="8" fill="#C7FF4A">Open · 12 left</text>
+    <rect x="24" y="230" width="370" height="52" rx="6" fill="#0d1421" opacity="0.9"/>
+    <rect x="40" y="244" width="36" height="24" rx="4" fill="#2a1e3a"/>
+    <text x="46" y="260" font-family="sans-serif" font-size="9" font-weight="700" fill="#a855f7">I</text>
+    <text x="84" y="250" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Infosys</text>
+    <text x="84" y="264" font-family="sans-serif" font-size="9" fill="#858585">Systems Engineer · ₹6.5 LPA</text>
+    <rect x="310" y="242" width="68" height="20" rx="10" fill="#1e3a2e"/>
+    <text x="322" y="256" font-family="sans-serif" font-size="8" fill="#C7FF4A">Open · 38 left</text>
+    <rect x="24" y="288" width="370" height="52" rx="6" fill="#0d1421" opacity="0.9"/>
+    <rect x="40" y="302" width="36" height="24" rx="4" fill="#2a3a1e"/>
+    <text x="46" y="318" font-family="sans-serif" font-size="9" font-weight="700" fill="#84cc16">T</text>
+    <text x="84" y="308" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">TCS</text>
+    <text x="84" y="322" font-family="sans-serif" font-size="9" fill="#858585">Graduate Engineer Trainee · ₹7 LPA</text>
+    <rect x="310" y="300" width="68" height="20" rx="10" fill="#1e3a2e"/>
+    <text x="322" y="314" font-family="sans-serif" font-size="8" fill="#C7FF4A">Open · 55 left</text>
+  </g>
+  <!-- Student applications table -->
+  <text x="24" y="360" font-family="sans-serif" font-size="12" font-weight="600" fill="#F5F2EA">Student Applications — Google</text>
+  <rect x="24" y="368" width="370" height="28" rx="4" fill="#161b22" opacity="0.8"/>
+  <text x="40" y="387" font-family="sans-serif" font-size="8" fill="#858585">STUDENT</text>
+  <text x="170" y="387" font-family="sans-serif" font-size="8" fill="#858585">CGPA</text>
+  <text x="220" y="387" font-family="sans-serif" font-size="8" fill="#858585">BRANCH</text>
+  <text x="310" y="387" font-family="sans-serif" font-size="8" fill="#858585">STATUS</text>
+  <g>
+    <rect x="24" y="396" width="370" height="24" rx="3" fill="#ffffff" opacity="0.03"/>
+    <text x="40" y="412" font-family="sans-serif" font-size="9" fill="#F5F2EA">Aarav Mehta</text>
+    <text x="170" y="412" font-family="sans-serif" font-size="9" fill="#F5F2EA">9.1</text>
+    <text x="220" y="412" font-family="sans-serif" font-size="9" fill="#F5F2EA">CS</text>
+    <rect x="300" y="402" width="72" height="16" rx="8" fill="#1e3a2e"/>
+    <text x="312" y="414" font-family="sans-serif" font-size="8" fill="#C7FF4A">Shortlisted</text>
+    <rect x="24" y="420" width="370" height="24" rx="3" fill="#ffffff" opacity="0.03"/>
+    <text x="40" y="436" font-family="sans-serif" font-size="9" fill="#F5F2EA">Neha Joshi</text>
+    <text x="170" y="436" font-family="sans-serif" font-size="9" fill="#F5F2EA">8.7</text>
+    <text x="220" y="436" font-family="sans-serif" font-size="9" fill="#F5F2EA">IT</text>
+    <rect x="300" y="426" width="72" height="16" rx="8" fill="#1e3a2e"/>
+    <text x="312" y="438" font-family="sans-serif" font-size="8" fill="#C7FF4A">Shortlisted</text>
+    <rect x="24" y="444" width="370" height="24" rx="3" fill="#ffffff" opacity="0.03"/>
+    <text x="40" y="460" font-family="sans-serif" font-size="9" fill="#F5F2EA">Vikram Rao</text>
+    <text x="170" y="460" font-family="sans-serif" font-size="9" fill="#F5F2EA">7.9</text>
+    <text x="220" y="460" font-family="sans-serif" font-size="9" fill="#F5F2EA">CS</text>
+    <rect x="300" y="450" width="64" height="16" rx="8" fill="#1a1e1e"/>
+    <text x="308" y="462" font-family="sans-serif" font-size="8" fill="#858585">Not eligible</text>
+  </g>
+  <!-- Right: analytics panel -->
+  <rect x="406" y="150" width="370" height="320" rx="8" fill="#0d1421" opacity="0.9"/>
+  <text x="426" y="176" font-family="sans-serif" font-size="11" font-weight="600" fill="#F5F2EA">Placement Analytics</text>
+  <text x="426" y="210" font-family="sans-serif" font-size="9" fill="#858585">BRANCH WISE PLACEMENTS</text>
+  <g>
+    <rect x="426" y="220" width="230" height="16" rx="3" fill="#1a2235"/>
+    <rect x="426" y="220" width="180" height="16" rx="3" fill="#5b9de8" opacity="0.7"/>
+    <text x="666" y="232" font-family="sans-serif" font-size="8" fill="#858585">CS — 78%</text>
+    <rect x="426" y="242" width="230" height="16" rx="3" fill="#1a2235"/>
+    <rect x="426" y="242" width="140" height="16" rx="3" fill="#C7FF4A" opacity="0.6"/>
+    <text x="666" y="254" font-family="sans-serif" font-size="8" fill="#858585">IT — 61%</text>
+    <rect x="426" y="264" width="230" height="16" rx="3" fill="#1a2235"/>
+    <rect x="426" y="264" width="100" height="16" rx="3" fill="#e8855b" opacity="0.6"/>
+    <text x="666" y="276" font-family="sans-serif" font-size="8" fill="#858585">Mech — 43%</text>
+    <rect x="426" y="286" width="230" height="16" rx="3" fill="#1a2235"/>
+    <rect x="426" y="286" width="160" height="16" rx="3" fill="#a855f7" opacity="0.5"/>
+    <text x="666" y="298" font-family="sans-serif" font-size="8" fill="#858585">Civil — 52%</text>
+  </g>
+  <text x="426" y="325" font-family="sans-serif" font-size="9" fill="#858585">TOP RECRUITING COMPANIES</text>
+  <g>
+    <text x="426" y="345" font-family="sans-serif" font-size="11" fill="#F5F2EA">1. Google</text>
+    <text x="620" y="345" font-family="sans-serif" font-size="9" fill="#C7FF4A">12 offers</text>
+    <text x="426" y="365" font-family="sans-serif" font-size="11" fill="#F5F2EA">2. TCS</text>
+    <text x="620" y="365" font-family="sans-serif" font-size="9" fill="#C7FF4A">9 offers</text>
+    <text x="426" y="385" font-family="sans-serif" font-size="11" fill="#F5F2EA">3. Infosys</text>
+    <text x="620" y="385" font-family="sans-serif" font-size="9" fill="#C7FF4A">8 offers</text>
+    <text x="426" y="405" font-family="sans-serif" font-size="11" fill="#F5F2EA">4. Wipro</text>
+    <text x="620" y="405" font-family="sans-serif" font-size="9" fill="#C7FF4A">7 offers</text>
+  </g>
+  <text x="24" y="492" font-family="monospace" font-size="8" fill="#858585" opacity="0.4">DEMO INTERFACE — campusconnect / illustrative content</text>
+</svg>
