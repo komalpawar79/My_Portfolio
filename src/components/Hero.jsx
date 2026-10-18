@@ -163,21 +163,21 @@ export default function Hero() {
             variants={portraitReveal}
             initial="hidden"
             animate="visible"
-            className="relative flex items-end justify-center lg:justify-end w-full max-w-[540px] lg:max-w-none mx-auto select-none mt-4 lg:mt-0"
+            className="relative flex items-start justify-center lg:justify-end w-full max-w-[540px] lg:max-w-none mx-auto select-none mt-2 lg:-mt-10 xl:-mt-16 2xl:-mt-20 lg:self-start"
           >
-            {/* Portrait Frame — Enriched scale matching reference */}
-            <div className="relative z-10 w-full max-w-[380px] sm:max-w-[460px] lg:max-w-[520px] xl:max-w-[580px] 2xl:max-w-[640px] flex justify-center">
+            {/* Portrait Frame — Positioned higher to fill top space */}
+            <div className="relative z-10 w-full max-w-[390px] sm:max-w-[470px] lg:max-w-[530px] xl:max-w-[590px] 2xl:max-w-[650px] flex justify-center">
               <img
                 src="/images/komal-portrait-clean.png"
                 alt="Komal Pawar — Frontend & MERN Stack Developer portrait"
-                className="w-full h-auto max-h-[66vh] sm:max-h-[72vh] lg:max-h-[78vh] xl:max-h-[82vh] object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-none"
+                className="w-full h-auto max-h-[68vh] sm:max-h-[74vh] lg:max-h-[80vh] xl:max-h-[85vh] object-contain object-top drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-none"
                 loading="eager"
               />
 
               {/* Annotation 1: Top Left near head (Frontend Developer (MERN)) with arrow */}
               <motion.div
                 variants={annotationFade}
-                className="absolute -top-4 sm:top-[1%] -left-3 sm:-left-6 md:-left-8 lg:-left-6 xl:-left-12 z-20"
+                className="absolute top-[1%] sm:top-[3%] -left-3 sm:-left-6 md:-left-8 lg:-left-6 xl:-left-12 z-20"
               >
                 <div className="font-handwriting text-[#C8FF19] text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight -rotate-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>Frontend</div>
@@ -203,7 +203,7 @@ export default function Hero() {
               {/* Annotation 2: Upper Right (Turning ideas into real products.) with double underline */}
               <motion.div
                 variants={annotationFade}
-                className="absolute top-[10%] sm:top-[13%] -right-2 sm:-right-5 md:-right-7 lg:-right-4 xl:-right-10 z-20"
+                className="absolute top-[12%] sm:top-[15%] -right-2 sm:-right-5 md:-right-7 lg:-right-4 xl:-right-10 z-20"
               >
                 <div className="font-handwriting text-[#C8FF19] text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight rotate-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>Turning</div>
@@ -228,7 +228,7 @@ export default function Hero() {
               {/* Annotation 3: Lower Right (React Node.js Express MongoDB) */}
               <motion.div
                 variants={annotationFade}
-                className="absolute top-[50%] sm:top-[53%] -right-2 sm:-right-5 md:-right-7 lg:-right-3 xl:-right-8 z-20"
+                className="absolute top-[52%] sm:top-[55%] -right-2 sm:-right-5 md:-right-7 lg:-right-3 xl:-right-8 z-20"
               >
                 <div className="font-handwriting text-[#C8FF19] text-base sm:text-xl lg:text-2xl xl:text-[1.7rem] leading-snug rotate-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>React</div>
@@ -252,7 +252,7 @@ export default function Hero() {
 
               {/* Blazer Right Sleeve Contour line matching reference */}
               <svg
-                className="absolute right-[14%] sm:right-[16%] top-[36%] w-16 sm:w-20 lg:w-24 h-48 sm:h-56 lg:h-64 text-[#C8FF19]/70 pointer-events-none z-10"
+                className="absolute right-[14%] sm:right-[16%] top-[38%] w-16 sm:w-20 lg:w-24 h-48 sm:h-56 lg:h-64 text-[#C8FF19]/70 pointer-events-none z-10"
                 viewBox="0 0 60 180"
                 fill="none"
                 stroke="currentColor"
@@ -265,7 +265,7 @@ export default function Hero() {
 
               {/* Blazer Left Contour line matching reference */}
               <svg
-                className="absolute left-[8%] sm:left-[12%] bottom-[18%] w-11 sm:w-14 lg:w-16 h-20 sm:h-24 text-[#C8FF19]/60 pointer-events-none z-10"
+                className="absolute left-[8%] sm:left-[12%] bottom-[16%] w-11 sm:w-14 lg:w-16 h-20 sm:h-24 text-[#C8FF19]/60 pointer-events-none z-10"
                 viewBox="0 0 40 70"
                 fill="none"
                 stroke="currentColor"
