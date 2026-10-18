@@ -2,10 +2,13 @@
 
 @theme {
   --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-editorial: 'Anton', 'Bebas Neue', 'Space Grotesk', sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+  --font-tech: 'JetBrains Mono', monospace;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --color-charcoal: #171717;
   --color-offwhite: #F5F2EA;
-  --color-lime: #C7FF4A;
+  --color-lime: #C8FF19;
   --color-muted: #858585;
   --color-divider: #D9D5CC;
   --color-surface: #EAE6DC;
@@ -15,12 +18,15 @@
 :root {
   --color-charcoal: #171717;
   --color-offwhite: #F5F2EA;
-  --color-lime: #C7FF4A;
+  --color-lime: #C8FF19;
   --color-muted: #858585;
   --color-divider: #D9D5CC;
   --color-surface: #EAE6DC;
 
   --font-display: 'Space Grotesk', sans-serif;
+  --font-editorial: 'Anton', 'Bebas Neue', 'Space Grotesk', sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+  --font-tech: 'JetBrains Mono', monospace;
   --font-body: 'Inter', sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -261,6 +267,30 @@ h1, h2, h3, h4, h5, h6 {
 .text-stroke-lime:hover {
   color: #C7FF4A;
   text-shadow: 0 0 24px rgba(199, 255, 74, 0.4);
+}
+
+/* ─── Editorial & Handwriting Utilities ─────────────────────── */
+.font-editorial {
+  font-family: var(--font-editorial);
+  letter-spacing: 0.015em;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.text-stroke-hollow {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+  color: transparent;
+}
+
+.text-stroke-hollow-thick {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.88);
+  color: transparent;
 }
 
 /* ─── Orbit Visual ──────────────────────────────────────────── */

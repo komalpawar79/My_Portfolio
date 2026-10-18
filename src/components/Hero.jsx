@@ -1,331 +1,335 @@
-import { useRef, useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
+import { ArrowRight, ArrowDown, Mail } from 'lucide-react'
+import { Github, Linkedin } from './Icons.jsx'
 import { siteConfig } from '../data/siteConfig.js'
 
 /**
- * Hero — the first screen of the portfolio.
- * Balanced editorial headline, responsive typography,
- * interactive orbit visual, accessible buttons, and metadata.
+ * Editorial Dark Hero Section — precisely matching the reference design.
+ * Features oversized condensed typography with hollow outline, neon-lime accents,
+ * the user's authentic portrait blended seamlessly into black, handwritten annotations,
+ * and bottom scroll/social anchors.
  */
 export default function Hero() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const visualRef = useRef(null)
   const shouldReduceMotion = useReducedMotion()
-
-  useEffect(() => {
-    if (shouldReduceMotion) return
-    const handleMouseMove = (e) => {
-      if (!visualRef.current) return
-      const rect = visualRef.current.getBoundingClientRect()
-      const cx = rect.left + rect.width / 2
-      const cy = rect.top + rect.height / 2
-      setMousePos({
-        x: Math.max(-20, Math.min(20, ((e.clientX - cx) / rect.width) * 20)),
-        y: Math.max(-20, Math.min(20, ((e.clientY - cy) / rect.height) * 20)),
-      })
-    }
-    window.addEventListener('mousemove', handleMouseMove, { passive: true })
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [shouldReduceMotion])
 
   const containerVariants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.1 } },
+    visible: {
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.08,
+        delayChildren: 0.04,
+      },
+    },
   }
 
   const fadeUp = {
-    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+    hidden: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  }
+
+  const portraitReveal = {
+    hidden: shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] },
+    },
+  }
+
+  const annotationFade = {
+    hidden: shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.92 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.55, delay: 0.35, ease: [0.16, 1, 0.3, 1] },
+    },
+  }
+
+  function handleScrollToWork(e) {
+    e.preventDefault()
+    const el = document.getElementById('work')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
     <section
       id="hero"
       aria-label="Hero — Komal Pawar introduction"
-      className="relative min-h-screen bg-[#171717] flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 md:pb-10"
+      className="relative min-h-screen bg-[#080808] text-white flex flex-col justify-between pt-20 sm:pt-24 lg:pt-20 pb-4 sm:pb-6 overflow-hidden select-none"
     >
-      {/* Background subtle grid */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(#F5F2EA 1px, transparent 1px), linear-gradient(90deg, #F5F2EA 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
+      {/* Main hero grid */}
+      <div className="container-xl relative z-10 w-full my-auto py-2 sm:py-4">
+        <div className="grid lg:grid-cols-[1.08fr_0.92fr] xl:grid-cols-[1.14fr_0.86fr] gap-6 lg:gap-4 xl:gap-8 items-center">
 
-      <div className="container-xl relative z-10 py-4 md:py-8">
-        <div className="grid lg:grid-cols-[1.15fr_0.85fr] xl:grid-cols-[1.25fr_0.75fr] gap-10 lg:gap-8 xl:gap-14 items-center">
-
-          {/* Left: text content */}
+          {/* Left Column: Text Content & CTAs */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="max-w-2xl"
+            className="flex flex-col justify-center max-w-2xl lg:max-w-none z-20"
           >
-            {/* Label */}
-            <motion.p variants={fadeUp} className="text-label text-[#858585] mb-4 md:mb-5 tracking-[0.16em]">
-              FRONTEND DEVELOPMENT / FULL-STACK ENGINEERING
-            </motion.p>
-
-            {/* Main headline */}
-            <motion.h1
-              variants={fadeUp}
-              className="text-display text-[#F5F2EA] mb-6 md:mb-7"
-              aria-label="I build digital experiences that work."
-            >
-              I BUILD
-              <br />
-              DIGITAL
-              <br />
-              <span className="text-[#C7FF4A]">EXPERIENCES</span>
-              <br />
-              THAT WORK.
-            </motion.h1>
-
-            {/* Description */}
+            {/* Introductory metadata label */}
             <motion.p
               variants={fadeUp}
-              className="text-[#999999] text-base md:text-lg leading-relaxed max-w-xl mb-8 md:mb-10 font-normal"
+              className="font-tech text-xs sm:text-[0.8rem] font-medium tracking-[0.2em] text-[#888888] uppercase mb-3 sm:mb-4"
+            >
+              01 / FRONTEND &amp; MERN STACK DEVELOPER
+            </motion.p>
+
+            {/* Bold condensed editorial headline */}
+            <h1
+              className="font-editorial uppercase tracking-tight text-white leading-[0.85] select-none text-[2.75rem] sm:text-[3.75rem] md:text-[4.5rem] lg:text-[4.1rem] xl:text-[5.4rem] 2xl:text-[6.2rem]"
+              aria-label="I BUILD INTERACTIVE WEB EXPERIENCES."
+            >
+              <motion.div variants={fadeUp} className="block text-white">
+                I BUILD
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="relative inline-flex items-center my-0.5 sm:my-1">
+                <span
+                  className="text-transparent inline-block"
+                  style={{
+                    WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.85)',
+                  }}
+                >
+                  INTERACTIVE
+                </span>
+
+                {/* Hand-drawn neon lime zigzag scribble doodle beside INTERACTIVE */}
+                <svg
+                  className="inline-block ml-2 sm:ml-3 md:ml-4 w-9 sm:w-14 lg:w-16 xl:w-20 h-4 sm:h-6 lg:h-7 text-[#C8FF19] pointer-events-none select-none -translate-y-1"
+                  viewBox="0 0 76 28"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 14 L18 8 L32 20 L50 8 L72 18" />
+                  <path d="M8 20 L22 14 L36 24 L54 14 L74 22" strokeOpacity="0.85" />
+                </svg>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="block">
+                <span className="text-[#C8FF19]">WEB </span>
+                <span className="text-white">EXPERIENCES.</span>
+              </motion.div>
+            </h1>
+
+            {/* Supporting paragraph */}
+            <motion.p
+              variants={fadeUp}
+              className="text-[#9CA3AF] text-sm sm:text-[0.95rem] xl:text-base leading-relaxed max-w-lg mt-4 sm:mt-5 mb-5 sm:mb-7 font-normal"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              I'm Komal Pawar, a Frontend &amp; MERN Stack Developer interested in building
-              responsive interfaces, practical web applications, and digital experiences that
-              make complex tasks easier.
+              I'm Komal, a Frontend &amp; MERN Stack Developer. I turn ideas into real web applications — from clean UI components to complete backend workflows. I love solving problems, learning new things and building things that actually make a difference.
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3.5 sm:gap-4">
               <a
                 href="#work"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="btn-primary"
+                onClick={handleScrollToWork}
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#C8FF19] text-black font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#d8ff3d] hover:scale-105 hover:shadow-[0_0_20px_rgba(200,255,25,0.35)] cursor-pointer"
                 aria-label="Explore my work — scroll to projects"
               >
-                EXPLORE MY WORK ↘
+                <span>EXPLORE MY WORK</span>
+                <ArrowRight size={15} strokeWidth={2.5} />
               </a>
+
               <a
                 href={siteConfig.resume}
                 download="Komal_Pawar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#121212] text-white border border-white/20 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:border-white/70 hover:bg-white/10 hover:scale-105 cursor-pointer"
                 aria-label="View or download resume — opens PDF"
               >
-                VIEW RESUME ↗
+                <span>VIEW RESUME</span>
+                <ArrowDown size={15} strokeWidth={2} />
               </a>
-            </motion.div>
-
-            {/* Metadata tags */}
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 md:mt-12 pt-6 border-t border-white/15 flex flex-wrap items-center gap-x-6 gap-y-3"
-            >
-              {[
-                `BASED IN ${siteConfig.location.toUpperCase()}`,
-                'REACT / JAVASCRIPT / MERN',
-                siteConfig.availability.toUpperCase(),
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs font-medium tracking-wider text-[#858585] uppercase flex items-center gap-2"
-                  style={{ fontFamily: 'var(--font-body)' }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#858585]" aria-hidden="true" />
-                  {tag}
-                </span>
-              ))}
             </motion.div>
           </motion.div>
 
-          {/* Right: abstract orbit visual */}
+          {/* Right Column: Real Portrait with Neon-Lime Handwritten Annotations */}
           <motion.div
-            ref={visualRef}
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col items-center justify-center relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[380px] xl:max-w-[420px] aspect-square mx-auto select-none"
-            aria-label="Interactive abstract orbit visual — decorative"
-            aria-hidden="true"
+            variants={portraitReveal}
+            initial="hidden"
+            animate="visible"
+            className="relative flex items-end justify-center lg:justify-end w-full max-w-[480px] lg:max-w-none mx-auto select-none mt-4 lg:mt-0"
           >
-            <OrbitVisual mousePos={mousePos} shouldReduceMotion={shouldReduceMotion} />
+            {/* Portrait Frame */}
+            <div className="relative z-10 w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[440px] xl:max-w-[490px] 2xl:max-w-[530px] flex justify-center">
+              <img
+                src="/images/komal-portrait-clean.png"
+                alt="Komal Pawar — Frontend & MERN Stack Developer portrait"
+                className="w-full h-auto max-h-[60vh] sm:max-h-[64vh] lg:max-h-[68vh] xl:max-h-[72vh] object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)] pointer-events-none"
+                loading="eager"
+              />
+
+              {/* Annotation 1: Top Left near head (Frontend Developer (MERN)) with arrow */}
+              <motion.div
+                variants={annotationFade}
+                className="absolute -top-3 sm:top-[2%] -left-2 sm:-left-5 md:-left-7 lg:-left-5 xl:-left-9 z-20"
+              >
+                <div className="font-handwriting text-[#C8FF19] text-base sm:text-xl lg:text-2xl leading-tight -rotate-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pointer-events-none select-none">
+                  <div>Frontend</div>
+                  <div>Developer</div>
+                  <div className="text-sm sm:text-lg lg:text-xl font-normal">(MERN)</div>
+                  {/* Curved arrow pointing down to shoulder */}
+                  <svg
+                    className="w-9 sm:w-12 lg:w-13 h-8 sm:h-10 lg:h-11 text-[#C8FF19] ml-4 sm:ml-6 -mt-1"
+                    viewBox="0 0 54 44"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 6 C 18 12, 36 18, 42 34" />
+                    <path d="M32 33 L 42 34 L 43 24" />
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Annotation 2: Upper Right (Turning ideas into real products.) with double underline */}
+              <motion.div
+                variants={annotationFade}
+                className="absolute top-[12%] sm:top-[15%] -right-2 sm:-right-4 md:-right-6 lg:-right-3 xl:-right-8 z-20"
+              >
+                <div className="font-handwriting text-[#C8FF19] text-base sm:text-xl lg:text-2xl leading-tight rotate-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pointer-events-none select-none">
+                  <div>Turning</div>
+                  <div>ideas into</div>
+                  <div>real products.</div>
+                  {/* Hand-drawn double underline */}
+                  <svg
+                    className="w-20 sm:w-26 lg:w-28 h-3.5 sm:h-4 text-[#C8FF19] mt-1"
+                    viewBox="0 0 110 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 6 Q 30 14, 60 6 T 106 6" />
+                    <path d="M10 11 Q 35 15, 65 9 T 100 11" />
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Annotation 3: Lower Right (React Node.js Express MongoDB) */}
+              <motion.div
+                variants={annotationFade}
+                className="absolute top-[52%] sm:top-[55%] -right-2 sm:-right-4 md:-right-6 lg:-right-2 xl:-right-5 z-20"
+              >
+                <div className="font-handwriting text-[#C8FF19] text-sm sm:text-lg lg:text-xl leading-snug rotate-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] pointer-events-none select-none">
+                  <div>React</div>
+                  <div>Node.js</div>
+                  <div>Express</div>
+                  <div>MongoDB</div>
+                  {/* Subtle underline accent */}
+                  <svg
+                    className="w-20 sm:w-24 lg:w-26 h-3.5 sm:h-4 text-[#C8FF19] mt-1"
+                    viewBox="0 0 110 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 8 Q 30 14, 60 8 T 104 8" />
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* Blazer Right Sleeve Contour line matching reference */}
+              <svg
+                className="absolute right-[14%] sm:right-[16%] top-[38%] w-14 sm:w-18 h-44 sm:h-52 text-[#C8FF19]/70 pointer-events-none z-10"
+                viewBox="0 0 60 180"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <path d="M46 10 C 26 50, 18 110, 36 170" />
+              </svg>
+
+              {/* Blazer Left Contour line matching reference */}
+              <svg
+                className="absolute left-[8%] sm:left-[12%] bottom-[20%] w-10 sm:w-12 h-18 sm:h-20 text-[#C8FF19]/60 pointer-events-none z-10"
+                viewBox="0 0 40 70"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <path d="M30 8 C 12 24, 10 46, 26 62" />
+              </svg>
+            </div>
           </motion.div>
 
         </div>
       </div>
 
-      {/* Subtle bottom scroll indicator */}
-      <div
-        className="container-xl relative z-10 flex items-center justify-between text-xs text-[#858585] tracking-widest uppercase pt-4 border-t border-white/5"
-        aria-hidden="true"
-      >
-        <span>EDITORIAL ENGINEERING</span>
-        <div className="flex items-center gap-2">
-          <span>SCROLL TO EXPLORE</span>
-          <span className="text-[#C7FF4A]">↓</span>
+      {/* Bottom Bar: Scroll Down indicator (Left) & Social Links (Right) matching reference */}
+      <div className="container-xl relative z-10 w-full flex items-center justify-between pt-4 sm:pt-5 border-t border-white/10 text-xs text-[#888888]">
+        {/* Scroll down indicator */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <div
+            className="w-4 sm:w-5 h-7 sm:h-8 border border-white/30 rounded-full flex justify-center pt-1"
+            aria-hidden="true"
+          >
+            <motion.div
+              animate={shouldReduceMotion ? {} : { y: [0, 7, 0] }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+              className="w-1 h-1.5 sm:h-2 bg-white/70 rounded-full"
+            />
+          </div>
+          <div className="flex items-center gap-2 font-mono text-[0.7rem] sm:text-xs tracking-[0.2em] text-[#888888] uppercase">
+            <span className="text-[#444444]">|</span>
+            <span>SCROLL DOWN</span>
+          </div>
+        </div>
+
+        {/* Social media icons on bottom right */}
+        <div className="flex items-center gap-4 sm:gap-5 text-[#888888]">
+          <a
+            href={siteConfig.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="hover:text-[#C8FF19] transition-colors duration-200 p-1"
+          >
+            <Github size={17} />
+          </a>
+          <a
+            href={siteConfig.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="hover:text-[#C8FF19] transition-colors duration-200 p-1"
+          >
+            <Linkedin size={17} />
+          </a>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            aria-label="Send email"
+            className="hover:text-[#C8FF19] transition-colors duration-200 p-1"
+          >
+            <Mail size={17} />
+          </a>
         </div>
       </div>
     </section>
   )
 }
-
-/* ── Orbit Visual sub-component ──────────────────────────────── */
-function OrbitVisual({ mousePos, shouldReduceMotion }) {
-  return (
-    <div
-      className="relative w-full h-full"
-      style={
-        shouldReduceMotion
-          ? {}
-          : {
-              transform: `perspective(800px) rotateX(${-mousePos.y * 0.35}deg) rotateY(${mousePos.x * 0.35}deg)`,
-              transition: 'transform 0.12s ease-out',
-            }
-      }
-    >
-      {/* Soft ambient lime background glow */}
-      <div
-        className="absolute inset-0 rounded-full pointer-events-none opacity-20 blur-2xl"
-        style={{
-          background: 'radial-gradient(circle, rgba(199,255,74,0.4) 0%, rgba(23,23,23,0) 70%)',
-        }}
-      />
-
-      <svg
-        viewBox="0 0 420 420"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full relative z-10"
-        role="img"
-        aria-label="Decorative orbital rings animation"
-      >
-        {/* Outer ring */}
-        <circle
-          cx="210"
-          cy="210"
-          r="190"
-          stroke="#F5F2EA"
-          strokeWidth="1"
-          strokeOpacity="0.18"
-          className="orbit-ring-1"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-
-        {/* Orbit ring 2 */}
-        <ellipse
-          cx="210"
-          cy="210"
-          rx="155"
-          ry="155"
-          stroke="#F5F2EA"
-          strokeWidth="1"
-          strokeOpacity="0.25"
-          strokeDasharray="6 12"
-          className="orbit-ring-2"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-
-        {/* Inner ring */}
-        <circle
-          cx="210"
-          cy="210"
-          r="110"
-          stroke="#C7FF4A"
-          strokeWidth="1.2"
-          strokeOpacity="0.45"
-          className="orbit-ring-3"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-
-        {/* Mid ring plain */}
-        <circle
-          cx="210"
-          cy="210"
-          r="75"
-          stroke="#F5F2EA"
-          strokeWidth="1"
-          strokeOpacity="0.15"
-        />
-
-        {/* Orbiting dots — ring 2 */}
-        <circle
-          cx="365"
-          cy="210"
-          r="4.5"
-          fill="#F5F2EA"
-          fillOpacity="0.75"
-          className="orbit-ring-2"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-        <circle
-          cx="55"
-          cy="210"
-          r="3"
-          fill="#F5F2EA"
-          fillOpacity="0.5"
-          className="orbit-ring-2"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-
-        {/* Orbiting dot — lime ring */}
-        <circle
-          cx="210"
-          cy="100"
-          r="5.5"
-          fill="#C7FF4A"
-          className="orbit-ring-1"
-          style={{ transformOrigin: '210px 210px' }}
-        />
-
-        {/* Core glow */}
-        <circle cx="210" cy="210" r="54" fill="#C7FF4A" fillOpacity="0.1" className="orbit-core" />
-        <circle cx="210" cy="210" r="36" fill="#C7FF4A" fillOpacity="0.22" className="orbit-core" />
-        <circle cx="210" cy="210" r="22" fill="#C7FF4A" fillOpacity="0.95" className="orbit-core" />
-
-        {/* Crosshair on center */}
-        <line x1="210" y1="196" x2="210" y2="204" stroke="#171717" strokeWidth="2" />
-        <line x1="210" y1="216" x2="210" y2="224" stroke="#171717" strokeWidth="2" />
-        <line x1="196" y1="210" x2="204" y2="210" stroke="#171717" strokeWidth="2" />
-        <line x1="216" y1="210" x2="224" y2="210" stroke="#171717" strokeWidth="2" />
-
-        {/* Corner technical labels */}
-        <text x="20" y="28" fill="#858585" fontSize="8" fontFamily="monospace" letterSpacing="1.2">
-          INTERACTIVE OBJECT / 001
-        </text>
-        <text x="20" y="404" fill="#858585" fontSize="8" fontFamily="monospace" letterSpacing="1.2">
-          MOVE TO EXPLORE
-        </text>
-        <text x="360" y="404" fill="#858585" fontSize="8" fontFamily="monospace" letterSpacing="1.2">
-          KP®
-        </text>
-
-        {/* Tick marks around perimeter */}
-        {[0, 90, 180, 270].map((angle) => {
-          const rad = (angle * Math.PI) / 180
-          const x1 = 210 + 186 * Math.cos(rad)
-          const y1 = 210 + 186 * Math.sin(rad)
-          const x2 = 210 + 196 * Math.cos(rad)
-          const y2 = 210 + 196 * Math.sin(rad)
-          return (
-            <line
-              key={angle}
-              x1={x1}
-              y1={y1}
-              x2={x2}
-              y2={y2}
-              stroke="#F5F2EA"
-              strokeWidth="1.5"
-              strokeOpacity="0.5"
-            />
-          )
-        })}
-      </svg>
-    </div>
-  )
-}
-

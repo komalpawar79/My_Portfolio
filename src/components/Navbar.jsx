@@ -1,23 +1,46 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ArrowDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { siteConfig } from '../data/siteConfig.js'
 
 const navLinks = [
-  { label: 'Work', href: '/#work' },
-  { label: 'About', href: '/#about' },
-  { label: 'Process', href: '/#process' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Home', href: '/#hero', id: 'hero' },
+  { label: 'Work', href: '/#work', id: 'work' },
+  { label: 'About', href: '/#about', id: 'about' },
+  { label: 'Skills', href: '/#skills', id: 'skills' },
+  { label: 'Contact', href: '/#contact', id: 'contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
   const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30)
+
+      // Active section tracking
+      const sections = ['hero', 'work', 'about', 'skills', 'contact']
+      const scrollPos = window.scrollY + 180
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId)
+        if (el) {
+          const top = el.offsetTop
+          const height = el.offsetHeight
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
+      if (window.scrollY < 80) {
+        setActiveSection('hero')
+      }
+    }
+
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -35,17 +58,19 @@ export default function Navbar() {
     }
   }, [menuOpen])
 
-  function handleNavClick(e, href) {
+  function handleNavClick(e, href, id) {
+    e.preventDefault()
     setMenuOpen(false)
-    if (href.startsWith('/#')) {
-      e.preventDefault()
-      const id = href.replace('/#', '')
-      if (pathname !== '/') {
-        window.location.href = href
-        return
-      }
-      const el = document.getElementById(id)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    setActiveSection(id)
+
+    if (pathname !== '/') {
+      window.location.href = href
+      return
+    }
+
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -55,52 +80,65 @@ export default function Navbar() {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-[#171717]/95 backdrop-blur-md border-b border-white/10 shadow-lg'
+            ? 'bg-[#080808]/92 backdrop-blur-md border-b border-white/10 shadow-xl'
             : 'bg-transparent'
         }`}
       >
         <div className="container-xl">
           <nav
             aria-label="Primary navigation"
-            className="flex items-center justify-between h-16 md:h-20"
+            className="flex items-center justify-between h-16 sm:h-20"
           >
-            {/* Logo */}
+            {/* Logo: KOMAL. with neon lime dot */}
             <Link
               to="/"
-              className="font-bold text-sm md:text-base uppercase tracking-wider text-[#F5F2EA] hover:text-[#C7FF4A] transition-colors"
-              style={{ fontFamily: 'var(--font-display)' }}
+              className="font-editorial text-2xl sm:text-[1.75rem] font-bold uppercase tracking-wider text-white hover:opacity-90 transition-opacity inline-flex items-baseline"
               aria-label={`${siteConfig.name} — home`}
             >
-              {siteConfig.name}
-              <sup className="ml-1 text-[0.6em] text-[#858585]">®</sup>
+              <span>KOMAL</span>
+              <span className="text-[#C8FF19] font-sans text-3xl font-black leading-none ml-0.5">.</span>
             </Link>
 
-            {/* Desktop navigation */}
-            <ul className="hidden md:flex items-center gap-8 lg:gap-10" role="list">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-xs font-semibold uppercase tracking-widest text-[#F5F2EA]/85 hover:text-[#C7FF4A] transition-colors duration-200 py-1"
-                    style={{ fontFamily: 'var(--font-body)' }}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+            {/* Desktop navigation matching reference */}
+            <ul className="hidden md:flex items-center gap-7 lg:gap-9" role="list">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id
+                return (
+                  <li key={link.label} className="relative py-1">
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href, link.id)}
+                      className={`text-sm tracking-wide transition-colors duration-200 block ${
+                        isActive
+                          ? 'text-[#C8FF19] font-medium'
+                          : 'text-[#9E9E9E] hover:text-white font-normal'
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                    {isActive && (
+                      <span
+                        className="w-1.5 h-1.5 rounded-full bg-[#C8FF19] absolute -bottom-1.5 left-1/2 -translate-x-1/2"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </li>
+                )
+              })}
             </ul>
 
-            {/* Availability button + mobile menu toggle */}
-            <div className="flex items-center gap-3 md:gap-4">
+            {/* Resume button & mobile toggle */}
+            <div className="flex items-center gap-3">
               <a
-                href={`mailto:${siteConfig.email}`}
-                className="hidden lg:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#F5F2EA] border border-white/25 px-3.5 py-2 hover:border-[#C7FF4A] hover:text-[#C7FF4A] transition-all duration-200"
-                style={{ fontFamily: 'var(--font-body)' }}
-                aria-label="Open to opportunities — send email"
+                href={siteConfig.resume}
+                download="Komal_Pawar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-white border border-white/20 rounded-full px-4 sm:px-5 py-2 hover:border-white/60 hover:bg-white/5 transition-all duration-200"
+                aria-label="View or download resume"
               >
-                <span className="w-2 h-2 rounded-full bg-[#C7FF4A] animate-pulse" aria-hidden="true" />
-                {siteConfig.availabilityShort}
+                <span>Resume</span>
+                <ArrowDown size={14} className="text-white/80" />
               </a>
 
               <button
@@ -109,7 +147,7 @@ export default function Navbar() {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden p-2 rounded-xs text-[#F5F2EA] hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-[#C7FF4A]"
+                className="md:hidden p-2 rounded-sm text-white hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-[#C8FF19]"
               >
                 {menuOpen ? <X size={22} /> : <Menu size={22} />}
               </button>
@@ -118,7 +156,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile menu modal */}
+      {/* Mobile menu drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -130,10 +168,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#171717] flex flex-col pt-24 pb-10 px-6 sm:px-10"
+            className="fixed inset-0 z-40 bg-[#080808] flex flex-col pt-24 pb-10 px-6 sm:px-10"
           >
             <nav aria-label="Mobile navigation">
-              <ul role="list" className="flex flex-col gap-1">
+              <ul role="list" className="flex flex-col gap-2">
                 {navLinks.map((link, i) => (
                   <motion.li
                     key={link.label}
@@ -143,9 +181,12 @@ export default function Navbar() {
                   >
                     <a
                       href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="block py-4 text-3xl font-bold text-[#F5F2EA] border-b border-white/10 hover:text-[#C7FF4A] transition-colors duration-200"
-                      style={{ fontFamily: 'var(--font-display)' }}
+                      onClick={(e) => handleNavClick(e, link.href, link.id)}
+                      className={`block py-3 text-2xl font-bold uppercase tracking-wider border-b border-white/10 font-editorial ${
+                        activeSection === link.id
+                          ? 'text-[#C8FF19]'
+                          : 'text-white hover:text-[#C8FF19]'
+                      }`}
                     >
                       {link.label}
                     </a>
@@ -154,19 +195,20 @@ export default function Navbar() {
               </ul>
             </nav>
 
-            <div className="mt-auto flex flex-col gap-3 pt-8 border-t border-white/10">
+            <div className="mt-auto flex flex-col gap-4 pt-8 border-t border-white/10">
               <a
-                href={`mailto:${siteConfig.email}`}
-                className="text-[#858585] text-sm md:text-base hover:text-[#F5F2EA] transition-colors"
-                style={{ fontFamily: 'var(--font-body)' }}
+                href={siteConfig.resume}
+                download="Komal_Pawar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wider text-black bg-[#C8FF19] rounded-full py-3 hover:bg-[#d4ff35] transition-colors"
               >
-                {siteConfig.email}
+                <span>View Resume</span>
+                <ArrowDown size={16} />
               </a>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C7FF4A]" aria-hidden="true" />
-                <span className="text-xs uppercase tracking-wider text-[#858585]">
-                  {siteConfig.availability}
-                </span>
+              <div className="flex items-center justify-between text-xs text-[#888888] font-mono">
+                <span>{siteConfig.email}</span>
+                <span className="text-[#C8FF19]">OPEN TO WORK</span>
               </div>
             </div>
           </motion.div>
