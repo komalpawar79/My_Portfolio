@@ -147,9 +147,9 @@ export default function Navbar() {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden p-2 rounded-sm text-white hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-[#C8FF19]"
+                className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-sm text-white hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-[#C8FF19]"
               >
-                {menuOpen ? <X size={22} /> : <Menu size={22} />}
+                {menuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </nav>
@@ -168,7 +168,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#080808] flex flex-col pt-24 pb-10 px-6 sm:px-10"
+            className="fixed inset-0 z-40 bg-[#080808] flex flex-col pt-24 pb-10 px-6 sm:px-10 overflow-y-auto max-h-screen"
           >
             <nav aria-label="Mobile navigation">
               <ul role="list" className="flex flex-col gap-2">
@@ -201,13 +201,13 @@ export default function Navbar() {
                 download="Komal_Pawar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wider text-black bg-[#C8FF19] rounded-full py-3 hover:bg-[#d4ff35] transition-colors"
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] text-sm font-semibold uppercase tracking-wider text-black bg-[#C8FF19] rounded-full py-3 px-6 hover:bg-[#d4ff35] transition-colors"
               >
                 <span>View Resume</span>
                 <ArrowDown size={16} />
               </a>
-              <div className="flex items-center justify-between text-xs text-[#888888] font-mono">
-                <span>{siteConfig.email}</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-[#888888] font-mono">
+                <span className="truncate">{siteConfig.email}</span>
                 <span className="text-[#C8FF19]">OPEN TO WORK</span>
               </div>
             </div>

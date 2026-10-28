@@ -38,7 +38,7 @@ export default function Marquee() {
 
     const separator = (
       <span
-        className="mx-6 sm:mx-8 md:mx-10 text-[#C7FF4A] text-[0.6em] align-middle select-none animate-pulse"
+        className="mx-3 xs:mx-6 sm:mx-8 md:mx-10 text-[#C7FF4A] text-[0.6em] align-middle select-none animate-pulse"
         aria-hidden="true"
       >
         {idx % 2 === 0 ? '✳' : '✦'}

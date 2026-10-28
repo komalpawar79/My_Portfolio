@@ -25,29 +25,29 @@ export default function Journey() {
         <div className="relative max-w-4xl">
           {/* Vertical hairline connector */}
           <div
-            className="absolute left-4 md:left-6 top-3 bottom-8 w-px bg-[#D9D5CC]"
+            className="absolute left-3.5 sm:left-4 md:left-6 top-3 bottom-8 w-px bg-[#D9D5CC]"
             aria-hidden="true"
           />
 
           <ol role="list" className="flex flex-col gap-0">
             {journeyItems.map((item, i) => (
-              <li key={item.id} className="relative flex gap-6 md:gap-10 pb-12 md:pb-14 last:pb-4">
+              <li key={item.id} className="relative flex gap-3 sm:gap-6 md:gap-10 pb-10 sm:pb-12 md:pb-14 last:pb-4">
                 {/* Timeline node */}
                 <div className="relative z-10 shrink-0 pt-0.5">
                   <div
-                    className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-[#F5F2EA] border-2 border-[#171717] rounded-full shadow-xs"
+                    className="w-7 h-7 sm:w-8 sm:h-8 md:w-12 md:h-12 flex items-center justify-center bg-[#F5F2EA] border-2 border-[#171717] rounded-full shadow-xs"
                     aria-hidden="true"
                   >
-                    <span className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#C7FF4A]" />
+                    <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full bg-[#C7FF4A]" />
                   </div>
                 </div>
 
                 {/* Timeline content card */}
                 <div className="flex-1 pt-0.5">
                   <Reveal delay={i * 0.08}>
-                    <div className="bg-white/60 border border-[#D9D5CC] p-6 md:p-7 hover:border-[#171717]/40 transition-colors duration-200">
+                    <div className="bg-white/60 border border-[#D9D5CC] p-4 sm:p-6 md:p-7 hover:border-[#171717]/40 transition-colors duration-200">
                       {/* Year pill */}
-                      <span className="inline-block px-3 py-1 bg-[#171717] text-[#C7FF4A] text-xs font-mono font-bold tracking-wider mb-3">
+                      <span className="inline-block px-2.5 sm:px-3 py-1 bg-[#171717] text-[#C7FF4A] text-xs font-mono font-bold tracking-wider mb-2.5 sm:mb-3">
                         {item.year}
                       </span>
 

@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Fluid display headline */
 .text-display {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+  font-size: clamp(1.75rem, 5.5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.01em;
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.6vw, 3.25rem);
+  font-size: clamp(1.5rem, 3.8vw, 3.25rem);
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.005em;
@@ -92,14 +92,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 5vw, 6rem);
+  padding-inline: clamp(1rem, 4vw, 5rem);
 }
 
 .container-lg {
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 5vw, 5rem);
+  padding-inline: clamp(1rem, 4vw, 4rem);
 }
 
 /* ─── Focus styles ──────────────────────────────────────────── */
@@ -139,18 +139,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.85rem 1.85rem;
+  min-height: 44px;
+  padding: clamp(0.7rem, 2vw, 0.85rem) clamp(1.15rem, 3vw, 1.85rem);
   background: var(--color-lime);
   color: var(--color-charcoal);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.6vw, 0.85rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   border: none;
   cursor: pointer;
+  max-width: 100%;
+  white-space: nowrap;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-primary:hover {
@@ -164,18 +166,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.85rem 1.85rem;
+  min-height: 44px;
+  padding: clamp(0.7rem, 2vw, 0.85rem) clamp(1.15rem, 3vw, 1.85rem);
   background: transparent;
   color: var(--color-offwhite);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.6vw, 0.85rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
+  max-width: 100%;
+  white-space: nowrap;
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 .btn-outline:hover {
@@ -190,18 +194,20 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.85rem 1.85rem;
+  min-height: 44px;
+  padding: clamp(0.7rem, 2vw, 0.85rem) clamp(1.15rem, 3vw, 1.85rem);
   background: transparent;
   color: var(--color-charcoal);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 1.6vw, 0.85rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   border: 1px solid rgba(23, 23, 23, 0.35);
   cursor: pointer;
+  max-width: 100%;
+  white-space: nowrap;
   transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .btn-outline-dark:hover {

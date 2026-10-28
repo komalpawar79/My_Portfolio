@@ -91,20 +91,20 @@ export default function ProjectDetail() {
 
               {/* Action buttons */}
               <Reveal delay={0.12}>
-                <div className="flex flex-col gap-3.5 sm:min-w-[200px]">
+                <div className="flex flex-col sm:flex-row md:flex-col gap-3 sm:gap-3.5 w-full sm:w-auto sm:min-w-[200px]">
                   {project.liveUrl ? (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary"
+                      className="btn-primary text-center justify-center"
                       aria-label={`Live demo for ${project.title}`}
                     >
                       LIVE DEMO ↗
                     </a>
                   ) : (
                     <span
-                      className="inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold tracking-wider uppercase text-[#858585] border border-white/10 cursor-not-allowed"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold tracking-wider uppercase text-[#858585] border border-white/10 cursor-not-allowed text-center"
                       style={{ fontFamily: 'var(--font-body)' }}
                       title="Demo not deployed"
                     >
@@ -117,14 +117,14 @@ export default function ProjectDetail() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-outline"
+                      className="btn-outline text-center justify-center"
                       aria-label={`Source code for ${project.title} on GitHub`}
                     >
                       SOURCE CODE ↗
                     </a>
                   ) : (
                     <span
-                      className="inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold tracking-wider uppercase text-[#858585] border border-white/10 cursor-not-allowed"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold tracking-wider uppercase text-[#858585] border border-white/10 cursor-not-allowed text-center"
                       style={{ fontFamily: 'var(--font-body)' }}
                       title="Repository not configured"
                     >
@@ -397,31 +397,31 @@ export default function ProjectDetail() {
         </div>
 
         {/* ── Project navigation ──────────────────────────────────── */}
-        <section aria-label="Project navigation" className="bg-[#EAE6DC] py-16 md:py-20 border-t border-[#D9D5CC]">
+        <section aria-label="Project navigation" className="bg-[#EAE6DC] py-14 sm:py-16 md:py-20 border-t border-[#D9D5CC]">
           <div className="container-xl">
-            <div className="grid sm:grid-cols-3 gap-6 mb-12 items-center">
+            <div className="flex flex-col sm:grid sm:grid-cols-3 gap-4 sm:gap-6 mb-12 items-stretch sm:items-center">
 
               {/* Prev */}
               {prev ? (
                 <Link
                   to={`/work/${prev.slug}`}
-                  className="group flex items-center gap-3 text-sm md:text-base text-[#555] hover:text-[#171717] transition-colors"
+                  className="group flex items-center justify-between sm:justify-start gap-3 text-sm md:text-base text-[#555] hover:text-[#171717] transition-colors p-3 sm:p-0 border sm:border-0 border-[#D9D5CC] bg-white/40 sm:bg-transparent"
                   aria-label={`Previous project: ${prev.title}`}
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
-                  <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
+                  <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform shrink-0" aria-hidden="true" />
                   <span>
                     <span className="block text-label text-[#858585]">PREVIOUS</span>
                     <span className="font-semibold">{prev.title}</span>
                   </span>
                 </Link>
-              ) : <div />}
+              ) : <div className="hidden sm:block" />}
 
               {/* All work */}
-              <div className="flex justify-center">
+              <div className="flex justify-center order-first sm:order-none">
                 <Link
                   to="/#work"
-                  className="text-xs font-semibold text-[#858585] hover:text-[#171717] transition-colors uppercase tracking-widest text-center py-2 px-4 border border-[#D9D5CC] bg-white/40"
+                  className="w-full sm:w-auto text-xs font-semibold text-[#858585] hover:text-[#171717] transition-colors uppercase tracking-widest text-center py-2.5 px-4 border border-[#D9D5CC] bg-white/60 sm:bg-white/40"
                   aria-label="Back to all work"
                 >
                   ALL WORK
@@ -432,7 +432,7 @@ export default function ProjectDetail() {
               {next ? (
                 <Link
                   to={`/work/${next.slug}`}
-                  className="group flex items-center justify-end gap-3 text-sm md:text-base text-[#555] hover:text-[#171717] transition-colors text-right"
+                  className="group flex items-center justify-between sm:justify-end gap-3 text-sm md:text-base text-[#555] hover:text-[#171717] transition-colors text-right p-3 sm:p-0 border sm:border-0 border-[#D9D5CC] bg-white/40 sm:bg-transparent"
                   aria-label={`Next project: ${next.title}`}
                   style={{ fontFamily: 'var(--font-body)' }}
                 >
@@ -440,9 +440,9 @@ export default function ProjectDetail() {
                     <span className="block text-label text-[#858585]">NEXT</span>
                     <span className="font-semibold">{next.title}</span>
                   </span>
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform shrink-0" aria-hidden="true" />
                 </Link>
-              ) : <div />}
+              ) : <div className="hidden sm:block" />}
             </div>
 
             {/* Contact CTA */}
@@ -602,7 +602,7 @@ function SystemScreensGallery({ screenshots, projectTitle, liveUrl }) {
               key={screen.id}
               type="button"
               onClick={() => setSelectedIdx(idx)}
-              className={`text-left p-3 md:p-3.5 transition-all duration-200 border cursor-pointer ${
+              className={`text-left p-2.5 sm:p-3 md:p-3.5 transition-all duration-200 border cursor-pointer ${
                 isActive
                   ? 'bg-[#171717] text-[#F5F2EA] border-[#171717] shadow-md -translate-y-0.5'
                   : 'bg-white/60 text-[#444] border-[#D9D5CC] hover:bg-white hover:border-[#171717]/40'
@@ -829,16 +829,16 @@ function SystemScreensGallery({ screenshots, projectTitle, liveUrl }) {
             className="w-full max-w-7xl flex items-center justify-between py-2 select-none"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <span className="font-mono text-xs font-bold text-[#C7FF4A]">
                 0{lightboxIdx + 1} / 0{screenshots.length}
               </span>
               <span className="text-white/40">|</span>
-              <span className="text-sm font-bold text-white truncate max-w-md" style={{ fontFamily: 'var(--font-display)' }}>
+              <span className="text-xs sm:text-sm font-bold text-white truncate max-w-[140px] xs:max-w-xs sm:max-w-md" style={{ fontFamily: 'var(--font-display)' }}>
                 {currentLightbox.title}
               </span>
               {currentLightbox.isMain && (
-                <span className="text-[9px] font-mono uppercase tracking-wider text-[#171717] bg-[#C7FF4A] font-bold px-1.5 py-0.5 rounded-2xs">
+                <span className="hidden xs:inline text-[9px] font-mono uppercase tracking-wider text-[#171717] bg-[#C7FF4A] font-bold px-1.5 py-0.5 rounded-2xs">
                   MAIN VIEW
                 </span>
               )}
@@ -847,7 +847,7 @@ function SystemScreensGallery({ screenshots, projectTitle, liveUrl }) {
             <button
               type="button"
               onClick={() => setLightboxIdx(null)}
-              className="p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors cursor-pointer"
+              className="p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors cursor-pointer min-w-[38px] min-h-[38px] flex items-center justify-center"
               aria-label="Close fullscreen modal"
             >
               <X size={20} />
@@ -872,7 +872,7 @@ function SystemScreensGallery({ screenshots, projectTitle, liveUrl }) {
                 e.stopPropagation()
                 setLightboxIdx((prev) => (prev - 1 + screenshots.length) % screenshots.length)
               }}
-              className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white border border-white/20 transition-all cursor-pointer shadow-lg"
+              className="absolute left-1 sm:-left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white border border-white/20 transition-all cursor-pointer shadow-lg"
               aria-label="Previous screenshot"
             >
               <ChevronLeft size={22} />
@@ -885,7 +885,7 @@ function SystemScreensGallery({ screenshots, projectTitle, liveUrl }) {
                 e.stopPropagation()
                 setLightboxIdx((prev) => (prev + 1) % screenshots.length)
               }}
-              className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white border border-white/20 transition-all cursor-pointer shadow-lg"
+              className="absolute right-1 sm:-right-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 rounded-full bg-black/70 hover:bg-black text-white border border-white/20 transition-all cursor-pointer shadow-lg"
               aria-label="Next screenshot"
             >
               <ChevronRight size={22} />

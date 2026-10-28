@@ -77,7 +77,7 @@ export default function About() {
                 <a
                   href="/resume.pdf"
                   download="Komal_Pawar_Resume.pdf"
-                  className="btn-outline-dark"
+                  className="btn-outline-dark w-full sm:w-auto text-center justify-center"
                   aria-label="Download Komal Pawar resume PDF"
                 >
                   DOWNLOAD RESUME (PDF) ↘

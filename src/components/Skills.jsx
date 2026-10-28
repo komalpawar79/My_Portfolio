@@ -29,11 +29,11 @@ export default function Skills() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {skillGroups.map((group, groupIdx) => (
             <Reveal key={group.id} delay={groupIdx * 0.08}>
-              <div className="bg-[#1e1e1e] border border-white/10 p-7 md:p-8 h-full flex flex-col justify-between transition-colors duration-200 hover:border-white/20">
+              <div className="bg-[#1e1e1e] border border-white/10 p-5 sm:p-7 md:p-8 h-full flex flex-col justify-between transition-colors duration-200 hover:border-white/20">
                 <div>
-                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                  <div className="flex items-center justify-between mb-5 sm:mb-6 pb-3.5 sm:pb-4 border-b border-white/10">
                     <p
-                      className="text-[#C7FF4A] text-xs font-bold tracking-[0.15em] uppercase"
+                      className="text-[#C7FF4A] text-xs font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase"
                       style={{ fontFamily: 'var(--font-body)' }}
                     >
                       {group.label}

@@ -18,7 +18,7 @@ export default function Introduction() {
           {/* Section number */}
           <Reveal>
             <span
-              className="text-xs tracking-widest uppercase text-[#858585] font-semibold block pt-1"
+              className="text-xs tracking-wider sm:tracking-widest uppercase text-[#858585] font-semibold block pt-1"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               00 / A LITTLE ABOUT MY WORK
@@ -51,7 +51,7 @@ export default function Introduction() {
                 {/* Editorial side note */}
                 <div className="border-l-2 border-[#C7FF4A] pl-4 py-1">
                   <p
-                    className="text-xs font-semibold tracking-[0.14em] uppercase text-[#777]"
+                    className="text-xs font-semibold tracking-[0.06em] sm:tracking-[0.14em] uppercase text-[#777]"
                     style={{ fontFamily: 'var(--font-body)' }}
                   >
                     THINK CLEARLY. BUILD CAREFULLY. KEEP IMPROVING.

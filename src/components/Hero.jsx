@@ -77,21 +77,21 @@ export default function Hero() {
             {/* Introductory metadata label */}
             <motion.p
               variants={fadeUp}
-              className="font-tech text-xs sm:text-[0.8rem] font-medium tracking-[0.2em] text-[#888888] uppercase mb-3 sm:mb-4"
+              className="font-tech text-[0.66rem] xs:text-xs sm:text-[0.8rem] font-medium tracking-[0.08em] xs:tracking-[0.14em] sm:tracking-[0.2em] text-[#888888] uppercase mb-3 sm:mb-4 break-words"
             >
               01 / FRONTEND &amp; MERN STACK DEVELOPER
             </motion.p>
 
             {/* Bold condensed editorial headline */}
             <h1
-              className="font-editorial uppercase tracking-tight text-white leading-[0.85] select-none text-[2.75rem] sm:text-[3.75rem] md:text-[4.5rem] lg:text-[4.1rem] xl:text-[5.4rem] 2xl:text-[6.2rem]"
+              className="font-editorial uppercase tracking-tight text-white leading-[0.85] select-none text-[clamp(1.9rem,8.2vw,2.75rem)] sm:text-[3.75rem] md:text-[4.5rem] lg:text-[4.1rem] xl:text-[5.4rem] 2xl:text-[6.2rem]"
               aria-label="I BUILD INTERACTIVE WEB EXPERIENCES."
             >
               <motion.div variants={fadeUp} className="block text-white">
                 I BUILD
               </motion.div>
 
-              <motion.div variants={fadeUp} className="relative inline-flex items-center my-0.5 sm:my-1">
+              <motion.div variants={fadeUp} className="relative inline-flex items-center my-0.5 sm:my-1 flex-wrap xs:flex-nowrap">
                 <span
                   className="text-transparent inline-block"
                   style={{
@@ -103,7 +103,7 @@ export default function Hero() {
 
                 {/* Hand-drawn neon lime zigzag scribble doodle beside INTERACTIVE */}
                 <svg
-                  className="inline-block ml-2 sm:ml-3 md:ml-4 w-9 sm:w-14 lg:w-16 xl:w-20 h-4 sm:h-6 lg:h-7 text-[#C8FF19] pointer-events-none select-none -translate-y-1"
+                  className="inline-block ml-1.5 sm:ml-3 md:ml-4 w-7 sm:w-14 lg:w-16 xl:w-20 h-3.5 sm:h-6 lg:h-7 text-[#C8FF19] pointer-events-none select-none -translate-y-0.5 sm:-translate-y-1 shrink-0"
                   viewBox="0 0 76 28"
                   fill="none"
                   stroke="currentColor"
@@ -133,11 +133,11 @@ export default function Hero() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3.5 sm:gap-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#work"
                 onClick={handleScrollToWork}
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#C8FF19] text-black font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#d8ff3d] hover:scale-105 hover:shadow-[0_0_20px_rgba(200,255,25,0.35)] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#C8FF19] text-black font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#d8ff3d] hover:scale-105 hover:shadow-[0_0_20px_rgba(200,255,25,0.35)] cursor-pointer text-center"
                 aria-label="Explore my work — scroll to projects"
               >
                 <span>EXPLORE MY WORK</span>
@@ -149,7 +149,7 @@ export default function Hero() {
                 download="Komal_Pawar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#121212] text-white border border-white/20 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:border-white/70 hover:bg-white/10 hover:scale-105 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#121212] text-white border border-white/20 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:border-white/70 hover:bg-white/10 hover:scale-105 cursor-pointer text-center"
                 aria-label="View or download resume — opens PDF"
               >
                 <span>VIEW RESUME</span>
@@ -163,29 +163,29 @@ export default function Hero() {
             variants={portraitReveal}
             initial="hidden"
             animate="visible"
-            className="relative flex items-start justify-center lg:justify-end w-full max-w-[540px] lg:max-w-none mx-auto select-none mt-2 lg:-mt-10 xl:-mt-16 2xl:-mt-20 lg:self-start"
+            className="relative flex items-start justify-center lg:justify-end w-full max-w-[540px] lg:max-w-none mx-auto select-none mt-4 sm:mt-2 lg:-mt-10 xl:-mt-16 2xl:-mt-20 lg:self-start"
           >
             {/* Portrait Frame — Positioned higher to fill top space */}
-            <div className="relative z-10 w-full max-w-[390px] sm:max-w-[470px] lg:max-w-[530px] xl:max-w-[590px] 2xl:max-w-[650px] flex justify-center">
+            <div className="relative z-10 w-full max-w-[290px] xs:max-w-[340px] sm:max-w-[470px] lg:max-w-[530px] xl:max-w-[590px] 2xl:max-w-[650px] flex justify-center">
               <img
                 src="/images/komal-portrait-clean.png"
                 alt="Komal Pawar — Frontend & MERN Stack Developer portrait"
-                className="w-full h-auto max-h-[68vh] sm:max-h-[74vh] lg:max-h-[80vh] xl:max-h-[85vh] object-contain object-top drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-none"
+                className="w-full h-auto max-h-[62vh] sm:max-h-[74vh] lg:max-h-[80vh] xl:max-h-[85vh] object-contain object-top drop-shadow-[0_25px_60px_rgba(0,0,0,0.95)] pointer-events-none"
                 loading="eager"
               />
 
               {/* Annotation 1: Top Left near head (Frontend Developer (MERN)) with arrow */}
               <motion.div
                 variants={annotationFade}
-                className="absolute top-[1%] sm:top-[3%] -left-3 sm:-left-6 md:-left-8 lg:-left-6 xl:-left-12 z-20"
+                className="absolute top-[1%] sm:top-[3%] -left-1 sm:-left-6 md:-left-8 lg:-left-6 xl:-left-12 z-20"
               >
-                <div className="font-handwriting text-[#C8FF19] text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight -rotate-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
+                <div className="font-handwriting text-[#C8FF19] text-base xs:text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight -rotate-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>Frontend</div>
                   <div>Developer</div>
-                  <div className="text-base sm:text-xl lg:text-2xl font-normal">(MERN)</div>
+                  <div className="text-sm xs:text-base sm:text-xl lg:text-2xl font-normal">(MERN)</div>
                   {/* Curved arrow pointing down to shoulder */}
                   <svg
-                    className="w-10 sm:w-13 lg:w-15 h-9 sm:h-11 lg:h-13 text-[#C8FF19] ml-5 sm:ml-7 -mt-1"
+                    className="w-8 xs:w-10 sm:w-13 lg:w-15 h-7 xs:h-9 sm:h-11 lg:h-13 text-[#C8FF19] ml-4 sm:ml-7 -mt-1"
                     viewBox="0 0 54 44"
                     fill="none"
                     stroke="currentColor"
@@ -203,15 +203,15 @@ export default function Hero() {
               {/* Annotation 2: Upper Right (Turning ideas into real products.) with double underline */}
               <motion.div
                 variants={annotationFade}
-                className="absolute top-[12%] sm:top-[15%] -right-2 sm:-right-5 md:-right-7 lg:-right-4 xl:-right-10 z-20"
+                className="absolute top-[10%] sm:top-[15%] -right-1 sm:-right-5 md:-right-7 lg:-right-4 xl:-right-10 z-20"
               >
-                <div className="font-handwriting text-[#C8FF19] text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight rotate-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
+                <div className="font-handwriting text-[#C8FF19] text-base xs:text-lg sm:text-2xl lg:text-[1.65rem] xl:text-3xl leading-tight rotate-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>Turning</div>
                   <div>ideas into</div>
                   <div>real products.</div>
                   {/* Hand-drawn double underline */}
                   <svg
-                    className="w-22 sm:w-28 lg:w-32 h-3.5 sm:h-4.5 text-[#C8FF19] mt-1"
+                    className="w-18 xs:w-22 sm:w-28 lg:w-32 h-3 sm:h-4.5 text-[#C8FF19] mt-1"
                     viewBox="0 0 110 16"
                     fill="none"
                     stroke="currentColor"
@@ -228,16 +228,16 @@ export default function Hero() {
               {/* Annotation 3: Lower Right (React Node.js Express MongoDB) */}
               <motion.div
                 variants={annotationFade}
-                className="absolute top-[52%] sm:top-[55%] -right-2 sm:-right-5 md:-right-7 lg:-right-3 xl:-right-8 z-20"
+                className="absolute top-[52%] sm:top-[55%] -right-1 sm:-right-5 md:-right-7 lg:-right-3 xl:-right-8 z-20"
               >
-                <div className="font-handwriting text-[#C8FF19] text-base sm:text-xl lg:text-2xl xl:text-[1.7rem] leading-snug rotate-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
+                <div className="font-handwriting text-[#C8FF19] text-xs xs:text-base sm:text-xl lg:text-2xl xl:text-[1.7rem] leading-snug rotate-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] pointer-events-none select-none">
                   <div>React</div>
                   <div>Node.js</div>
                   <div>Express</div>
                   <div>MongoDB</div>
                   {/* Subtle underline accent */}
                   <svg
-                    className="w-22 sm:w-26 lg:w-30 h-3.5 sm:h-4.5 text-[#C8FF19] mt-1"
+                    className="w-16 xs:w-22 sm:w-26 lg:w-30 h-3 sm:h-4.5 text-[#C8FF19] mt-1"
                     viewBox="0 0 110 16"
                     fill="none"
                     stroke="currentColor"
@@ -295,9 +295,10 @@ export default function Hero() {
               className="w-1 h-1.5 sm:h-2 bg-white/70 rounded-full"
             />
           </div>
-          <div className="flex items-center gap-2 font-mono text-[0.7rem] sm:text-xs tracking-[0.2em] text-[#888888] uppercase">
+          <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[0.65rem] sm:text-xs tracking-[0.12em] sm:tracking-[0.2em] text-[#888888] uppercase">
             <span className="text-[#444444]">|</span>
-            <span>SCROLL DOWN</span>
+            <span className="hidden xs:inline">SCROLL DOWN</span>
+            <span className="xs:hidden">SCROLL</span>
           </div>
         </div>
 

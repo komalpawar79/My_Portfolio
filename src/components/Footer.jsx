@@ -30,7 +30,7 @@ export default function Footer() {
               {siteConfig.name}
             </p>
             <p
-              className="text-xs tracking-widest uppercase text-[#858585]"
+              className="text-[0.68rem] sm:text-xs tracking-wider sm:tracking-widest uppercase text-[#858585]"
               style={{ fontFamily: 'var(--font-body)' }}
             >
               DESIGNED WITH INTENTION. BUILT WITH CODE.
@@ -38,12 +38,12 @@ export default function Footer() {
           </div>
 
           {/* Right: social + back-to-top */}
-          <div className="flex items-center gap-4 md:gap-5">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-5">
             <a
               href={siteConfig.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
+              className="p-2.5 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
               aria-label="GitHub profile"
             >
               <Github size={18} />
@@ -52,14 +52,14 @@ export default function Footer() {
               href={siteConfig.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
+              className="p-2.5 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
               aria-label="LinkedIn profile"
             >
               <Linkedin size={18} />
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="p-2 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
+              className="p-2.5 text-[#858585] hover:text-[#C7FF4A] transition-colors duration-200"
               aria-label="Send email"
             >
               <Mail size={18} />

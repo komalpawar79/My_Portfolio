@@ -30,7 +30,7 @@ export default function Contact() {
     },
     {
       label: 'LinkedIn',
-      value: 'linkedin.com/in/your-profile',
+      value: siteConfig.linkedin.replace('https://', ''),
       href: siteConfig.linkedin,
       icon: Linkedin,
       note: siteConfig.linkedin.includes('YOUR_PROFILE')
@@ -94,7 +94,7 @@ export default function Contact() {
                 href={href}
                 {...(download ? { download } : {})}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="group block bg-[#1e1e1e] border border-white/10 p-6 md:p-7 hover:border-[#C7FF4A]/50 hover:bg-[#232323] transition-all duration-200"
+                className="group block bg-[#1e1e1e] border border-white/10 p-4 sm:p-6 md:p-7 hover:border-[#C7FF4A]/50 hover:bg-[#232323] transition-all duration-200"
                 aria-label={note ? `${label} — ${note}` : `${label}: ${value}`}
               >
                 <div className="flex items-start justify-between mb-5">
@@ -126,8 +126,8 @@ export default function Contact() {
 
         {/* Location & Availability badge */}
         <Reveal delay={0.25}>
-          <div className="flex items-center gap-3 mt-10 md:mt-12 pt-8 border-t border-white/10">
-            <span className="w-2 h-2 rounded-full bg-[#C7FF4A] animate-pulse" aria-hidden="true" />
+          <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 mt-10 md:mt-12 pt-8 border-t border-white/10">
+            <span className="w-2 h-2 rounded-full bg-[#C7FF4A] animate-pulse mt-1 sm:mt-0 shrink-0" aria-hidden="true" />
             <p
               className="text-xs md:text-sm font-medium tracking-wider uppercase text-[#858585]"
               style={{ fontFamily: 'var(--font-body)' }}
