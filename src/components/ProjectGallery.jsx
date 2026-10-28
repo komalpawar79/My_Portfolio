@@ -27,7 +27,7 @@ export default function ProjectGallery() {
           />
         </Reveal>
 
-        <div className="flex flex-col gap-12 sm:gap-16 md:gap-24">
+        <div className="flex flex-col gap-16 md:gap-24">
           {projects.map((project, idx) => (
             <Reveal key={project.id}>
               <LargeProjectRow project={project} imageLeft={idx % 2 !== 0} />
@@ -115,7 +115,7 @@ function LargeProjectRow({ project, imageLeft }) {
                 {currentScreen.subtitle}
               </span>
             </div>
-            <div className={`grid gap-1.5 ${project.screenshots.length > 4 ? 'grid-cols-2 xs:grid-cols-3 sm:grid-cols-6' : 'grid-cols-2 xs:grid-cols-4'}`}>
+            <div className={`grid gap-1.5 ${project.screenshots.length > 4 ? 'grid-cols-3 sm:grid-cols-6' : 'grid-cols-4'}`}>
               {project.screenshots.map((screen, idx) => {
                 const isActive = idx === activeScreenIndex
                 const shortLabel =
@@ -220,10 +220,10 @@ function LargeProjectRow({ project, imageLeft }) {
         ))}
       </div>
 
-      <div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-2.5 sm:gap-3.5">
+      <div className="flex flex-wrap items-center gap-3.5">
         <Link
           to={`/work/${project.slug}`}
-          className="btn-outline-dark text-center justify-center"
+          className="btn-outline-dark"
           aria-label={`View ${project.title} full case study`}
         >
           VIEW CASE STUDY ↗
@@ -233,7 +233,7 @@ function LargeProjectRow({ project, imageLeft }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-center justify-center"
+            className="btn-primary"
             aria-label={`Open live demo of ${project.title}`}
           >
             LIVE DEMO ↗
@@ -244,12 +244,12 @@ function LargeProjectRow({ project, imageLeft }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] border border-[#D9D5CC] bg-white/40 px-3.5 py-3 hover:bg-[#171717] hover:text-[#F5F2EA] transition-all duration-200"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#171717] border border-[#D9D5CC] bg-white/40 px-3.5 py-3 hover:bg-[#171717] hover:text-[#F5F2EA] transition-all duration-200"
             aria-label={`View source code of ${project.title} on GitHub`}
             title="GitHub Repository"
           >
             <Github size={15} />
-            <span>CODE</span>
+            <span className="hidden sm:inline">CODE</span>
           </a>
         )}
       </div>
@@ -257,13 +257,18 @@ function LargeProjectRow({ project, imageLeft }) {
   )
 
   return (
-    <article className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-      <div className={imageLeft ? 'order-1 md:order-1' : 'order-1 md:order-2'}>
-        {imageContent}
-      </div>
-      <div className={imageLeft ? 'order-2 md:order-2' : 'order-2 md:order-1'}>
-        {textContent}
-      </div>
+    <article className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
+      {imageLeft ? (
+        <>
+          {imageContent}
+          {textContent}
+        </>
+      ) : (
+        <>
+          {textContent}
+          {imageContent}
+        </>
+      )}
     </article>
   )
 }
